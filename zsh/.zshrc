@@ -29,4 +29,4 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:ps:history"
 
 # Set a custom prompt with a blue gradient (using Oh My Posh)
-PROMPT='%F{blue}%n@%m %F{cyan}%~ %F{green}$(git branch 2>/dev/null | grep "^\*" | sed "s/^\* //") %F{reset}'
+PROMPT='%F{blue}%n@%m %F{cyan}%~ %F{green}%(git branch --show-current 2>/dev/null)%F{reset}'
