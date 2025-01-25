@@ -74,8 +74,11 @@ open -a iTerm
 # Install Nerd Font
 if ! ls ~/Library/Fonts | grep -q "$NERD_FONT_NAME"; then
   echo "Installing Nerd Font..."
-  brew tap homebrew/cask-fonts-nerd
+
+  # Install Nerd Font using Homebrew
   brew install --cask font-hack-nerd-font
+
+  echo "Nerd Font installed."
 else
   echo "Nerd Font is already installed."
 fi
