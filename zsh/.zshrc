@@ -34,5 +34,5 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 fi
 
 # Set a custom prompt with a blue gradient (using Oh My Posh)
-PROMPT='%F{33}d%f%F{39}e%f%F{38}v%f%F{44}i%f%F{50}n%f%F{45}k%f%F{44}l%f%F{39}e%f%F{38}p%f%F{43}p%f%F{44}@%f%F{43}m%f%F{44}a%f%F{50}c%f%F{44}:%~%f %F{45}%#%f %F{reset}'
+# PROMPT='%F{33}d%f%F{39}e%f%F{38}v%f%F{44}i%f%F{50}n%f%F{45}k%f%F{44}l%f%F{39}e%f%F{38}p%f%F{43}p%f%F{44}@%f%F{43}m%f%F{44}a%f%F{50}c%f%F{44}:%~%f %F{45}%#%f %F{reset}'
 
