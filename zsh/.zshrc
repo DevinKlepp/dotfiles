@@ -1,8 +1,9 @@
 # Set up Oh My Posh with a custom prompt
 if which oh-my-posh > /dev/null; then
-  export POSH_THEME=~/.poshthemes/custom-prompt.psh
-  oh-my-posh init zsh --config $POSH_THEME | source
+  export POSH_THEME="$DOTFILES_DEST_DIR/zsh/custom-prompt.psh"  # Use the prompt in your project
+  eval "$(oh-my-posh init zsh --config $POSH_THEME)"
 fi
+
 
 # Set up Zsh plugins
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
