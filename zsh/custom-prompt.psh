@@ -1,0 +1,32 @@
+{
+  "blocks": [
+    {
+      "type": "prompt",
+      "style": "powerline",
+      "foreground": "#FFFFFF",
+      "background": "#007ACC",
+      "properties": {
+        "left": [
+          {
+            "type": "text",
+            "text": "%username%@%hostname",
+            "foreground": "#FFFFFF",
+            "background": "#007ACC"
+          }
+        ]
+      }
+    },
+    {
+      "type": "git",
+      "properties": {
+        "enabled": true,
+        "branch": {
+          "foreground": "#FF5733"
+        },
+        "state": {
+          "foreground": "#00FF00"
+        }
+      }
+    }
+  ]
+}
