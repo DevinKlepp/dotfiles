@@ -9,10 +9,31 @@ ITERM_PROFILE_NAME="Default"
 
 echo "Starting setup..."
 
-# Check if Git is installed, install if not
+if ! command -v brew &>/dev/null; then
+  echo "Homebrew is not installed. Installing now..."
+
+  # Install Homebrew
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Determine the architecture and add Homebrew to the appropriate PATH
+  if [[ -d "/opt/homebrew/bin" ]]; then
+    # For M Series Macs (ARM architecture)
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ -d "/usr/local/bin" ]]; then
+    # For Intel Macs (x86 architecture)
+    echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
+
+  echo "Homebrew installed and added to PATH."
+else
+  echo "Homebrew is already installed."
+fi
+
+# Install Git if not installed
 if ! command -v git &> /dev/null; then
   echo "Git is not installed. Installing Git..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew install git
 else
   echo "Git is already installed."
@@ -29,14 +50,6 @@ fi
 
 # Change directory to the dotfiles repository
 cd "$DOTFILES_DEST_DIR"
-
-# Install Homebrew if not installed
-if ! command -v brew &> /dev/null; then
-  echo "Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-  echo "Homebrew is already installed."
-fi
 
 # Install iTerm2
 if ! brew list --cask | grep -q "^iterm2$"; then
