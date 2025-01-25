@@ -68,11 +68,12 @@ open -a iTerm
 # Install Nerd Font
 if ! ls ~/Library/Fonts | grep -q "$NERD_FONT_NAME"; then
   echo "Installing Nerd Font..."
-  brew tap homebrew/cask-fonts
+  brew tap homebrew/cask-fonts-nerd
   brew install --cask font-hack-nerd-font
 else
   echo "Nerd Font is already installed."
 fi
+
 
 # Install Oh My Posh
 if ! command -v oh-my-posh &> /dev/null; then
