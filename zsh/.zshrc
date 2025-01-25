@@ -30,7 +30,7 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:ps:history"
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
+  eval "$(oh-my-posh init zsh --config $HOME/src/dotfiles/zsh/custom-prompt.json)"
 fi
 
 # Set a custom prompt with a blue gradient (using Oh My Posh)
