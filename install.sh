@@ -39,6 +39,12 @@ else
   echo "Git is already installed."
 fi
 
+# Check if the dotfiles repository already exists, and remove it if it does
+if [ -d "$DOTFILES_DEST_DIR" ]; then
+  echo "Dotfiles repository already exists. Removing it..."
+  rm -rf "$DOTFILES_DEST_DIR"
+fi
+
 # Clone dotfiles repository if not already cloned
 if [ ! -d "$DOTFILES_DEST_DIR" ]; then
   echo "Cloning dotfiles repository to $DOTFILES_DEST_DIR..."
