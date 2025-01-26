@@ -73,7 +73,6 @@ fi
 echo "Setting iTerm2 as the default terminal..."
 defaults write com.apple.terminal "Default Window Settings" -string "$ITERM_PROFILE_NAME"
 defaults write com.apple.terminal "Startup Window Settings" -string "$ITERM_PROFILE_NAME"
-open -a iTerm
 
 # Install Nerd Font
 if ! ls ~/Library/Fonts | grep -q "$NERD_FONT_NAME"; then
@@ -144,3 +143,4 @@ echo "Reloading .zshrc..."
 source ~/.zshrc
 
 echo "Setup complete! Restart your terminal or source your .zshrc for changes to take effect."
+open -a iTerm
