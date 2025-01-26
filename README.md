@@ -26,3 +26,7 @@ sudo curl -fsSL https://raw.githubusercontent.com/DevinKlepp/dotfiles/main/insta
 - Add install step for VSCode
 - Add install step for window tiling manager
 - Add some configuration for mac defaults
+- Checkout the following repos again:
+- https://github.com/mathiasbynens/dotfiles
+- https://github.com/andrew8088/dotfiles
+- https://github.com/thomaspoignant/mac-dev-setup
