@@ -134,15 +134,6 @@ else
   echo ".zshrc is already set up."
 fi
 
-# Symlink Oh My Posh prompt config if not already linked
-if [ ! -L ~/.poshthemes/custom-prompt.psh ]; then
-  echo "Setting up Oh My Posh prompt..."
-  mkdir -p ~/.poshthemes
-  ln -sf "$DOTFILES_DEST_DIR/zsh/custom-prompt.psh" ~/.poshthemes/custom-prompt.psh
-else
-  echo "Oh My Posh prompt is already set up."
-fi
-
 # Configure iTerm2 to use Nerd Font
 echo "Configuring iTerm2 to use Nerd Font..."
 defaults write com.googlecode.iterm2 "Normal Font" -string "$NERD_FONT_NAME 12"
