@@ -95,14 +95,6 @@ else
   echo "lsd is already installed."
 fi
 
-# Set Zsh as the default shell
-if [ "$SHELL" != "$(which zsh)" ]; then
-  echo "Setting Zsh as the default shell..."
-  chsh -s "$(which zsh)"
-else
-  echo "Zsh is already the default shell."
-fi
-
 # Symlink .zshrc if not already linked
 if [ ! -L ~/.zshrc ]; then
   echo "Setting up .zshrc..."
