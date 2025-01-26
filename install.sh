@@ -74,7 +74,7 @@ defaults write com.apple.terminal "Default Window Settings" -string "$ITERM_PROF
 defaults write com.apple.terminal "Startup Window Settings" -string "$ITERM_PROFILE_NAME"
 
 # Install Nerd Font
-if ! ls ~/Library/Fonts | grep -q "HackNerdFont"; then
+if [ ! -f ~/Library/Fonts/"HackNerdFont-Regular.ttf" ]; then
   echo "Installing Nerd Font..."
 
   # Install Nerd Font using Homebrew
@@ -84,6 +84,7 @@ if ! ls ~/Library/Fonts | grep -q "HackNerdFont"; then
 else
   echo "Nerd Font is already installed."
 fi
+
 
 # Install Oh My Posh
 if ! command -v oh-my-posh &> /dev/null; then
