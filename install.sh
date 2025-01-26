@@ -39,6 +39,14 @@ else
   echo "Git is already installed."
 fi
 
+# Create ~/src directory if it doesn't exist
+if [ ! -d ~/src ]; then
+  echo "Creating ~/src directory..."
+  mkdir -p ~/src
+else
+  echo "~/src directory already exists."
+fi
+
 # Remove the dotfiles repository if it already exists
 if [ -d "$DOTFILES_DEST_DIR" ]; then
   echo "Dotfiles repository already exists. Removing it..."
@@ -49,7 +57,6 @@ fi
 echo "Cloning dotfiles repository to $DOTFILES_DEST_DIR..."
 [ -d "$HOME/src" ] || mkdir "$HOME/src"
 git clone "$DOTFILES_REPO_URL" "$DOTFILES_DEST_DIR"
-
 
 # Change directory to the dotfiles repository
 cd "$DOTFILES_DEST_DIR"
@@ -79,7 +86,6 @@ if ! ls ~/Library/Fonts | grep -q "$NERD_FONT_NAME"; then
 else
   echo "Nerd Font is already installed."
 fi
-
 
 # Install Oh My Posh
 if ! command -v oh-my-posh &> /dev/null; then
@@ -118,14 +124,6 @@ if [ "$SHELL" != "$(which zsh)" ]; then
   chsh -s "$(which zsh)"
 else
   echo "Zsh is already the default shell."
-fi
-
-# Create ~/src directory if it doesn't exist
-if [ ! -d ~/src ]; then
-  echo "Creating ~/src directory..."
-  mkdir -p ~/src
-else
-  echo "~/src directory already exists."
 fi
 
 # Symlink .zshrc if not already linked
