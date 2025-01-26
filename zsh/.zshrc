@@ -19,9 +19,8 @@ alias la="lsd -lA"
 alias lt="lsd -lt"
 
 # Other useful Zsh settings
-export ZSH_HISTORY_SIZE=10000
-export HISTCONTROL=ignoredups
-export HISTIGNORE="ls:ps:history"
+export ZSH_HISTORY_SIZE=5000
+setopt HIST_IGNORE_DUPS
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/src/dotfiles/zsh/custom-prompt.json)"
