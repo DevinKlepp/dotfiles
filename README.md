@@ -1,11 +1,16 @@
 # Dotfiles
 
-This repository contains my custom dotfiles for Zsh, including a custom `.zshrc` setup, Oh My Posh configuration, and support for `lsd` and Git aliases.
+This repository contains a fresh environment setup script and my custom dotfiles for Zsh.
 
 ## Features
-- Custom Zsh prompt using Oh My Posh with a blue gradient theme.
-- Useful Git aliases for a more efficient workflow.
-- Enhanced `ls` command using `lsd` with standard aliases (`ls`, `ll`, `la`, `lt`).
+- Installs Homebrew
+- Installs Git
+- Installs iTerm2
+- Sets up a custom prompt using oh-my-posh (You'll have to configure it yourself to remove my name)
+- Installs zsh-syntax-highlighting
+- Installs zsh-autosuggestions
+- Installs LSDeluxe
+- Downloads some nerd fonts (Note: You will have to manually set these in iTerm)
 
 ## Installation
 
