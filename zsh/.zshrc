@@ -5,11 +5,13 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Aliases
 alias g="git"
 alias ga="git add"
-alias gst="git status"
+alias gb="git branch"
+alias gc="git commit"
 alias gco="git checkout"
-alias gl="git log"
-alias ga.="git add ."
+alias gp="git push"
+alias gpl="git pull"
 alias gs="git status"
+alias gl="git log"
 
 # Enhanced 'ls' command using 'lsd'
 alias ls="lsd"
