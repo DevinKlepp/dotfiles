@@ -6,6 +6,7 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
+alias gcp="git cherry-pick"
 alias gco="git checkout"
 alias gp="git push"
 alias gpl="git pull"
