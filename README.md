@@ -12,4 +12,4 @@ This repository contains my custom dotfiles for Zsh, including a custom `.zshrc`
 Run the following command to clone this repository and set up your environment from scratch:
 
 ```bash
-sudo curl -fsSL https://raw.githubusercontent.com/DevinKlepp/dotfiles/main/install.sh | bash
+sudo curl -fsSL https://raw.githubusercontent.com/DevinKlepp/dotfiles/main/install.sh | zsh
