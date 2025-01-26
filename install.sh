@@ -133,11 +133,6 @@ else
   echo ".zshrc is already set up."
 fi
 
-# Configure iTerm2 to use Nerd Font
-echo "Configuring iTerm2 to use Nerd Font..."
-defaults write com.googlecode.iterm2 "Normal Font" -string "$NERD_FONT_NAME 12"
-defaults write com.googlecode.iterm2 "Non-ASCII Font" -string "$NERD_FONT_NAME 12"
-
 # Reload Zsh configuration
 echo "Reloading .zshrc..."
 source ~/.zshrc
