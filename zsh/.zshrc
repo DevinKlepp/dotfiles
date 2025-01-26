@@ -3,7 +3,6 @@ source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Aliases
-alias g="git"
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
