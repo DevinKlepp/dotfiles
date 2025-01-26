@@ -20,3 +20,9 @@ Run the following command to clone this repository and set up your environment f
 
 ```bash
 sudo curl -fsSL https://raw.githubusercontent.com/DevinKlepp/dotfiles/main/install.sh | zsh
+```
+
+## Todo
+- Add install step for VSCode
+- Add install step for window tiling manager
+- Add some configuration for mac defaults
