@@ -4,7 +4,6 @@ set -e  # Exit immediately if a command exits with a non-zero status.
 
 DOTFILES_REPO_URL="https://github.com/DevinKlepp/dotfiles.git"
 DOTFILES_DEST_DIR="$HOME/src/dotfiles"
-NERD_FONT_NAME="Hack Nerd Font"
 ITERM_PROFILE_NAME="Default"
 
 echo "Starting setup..."
@@ -75,7 +74,7 @@ defaults write com.apple.terminal "Default Window Settings" -string "$ITERM_PROF
 defaults write com.apple.terminal "Startup Window Settings" -string "$ITERM_PROFILE_NAME"
 
 # Install Nerd Font
-if ! ls ~/Library/Fonts | grep -q "$NERD_FONT_NAME"; then
+if ! ls ~/Library/Fonts | grep -q "HackNerdFont"; then
   echo "Installing Nerd Font..."
 
   # Install Nerd Font using Homebrew
