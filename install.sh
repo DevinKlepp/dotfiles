@@ -8,34 +8,20 @@ ITERM_PROFILE_NAME="Default"
 
 echo "Starting setup..."
 
+# Install Homebrew
 if ! command -v brew &>/dev/null; then
   echo "Homebrew is not installed. Installing now..."
-
-  # Install Homebrew
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  # Determine the architecture and add Homebrew to the appropriate PATH
-  if [[ -d "/opt/homebrew/bin" ]]; then
-    # For M Series Macs (ARM architecture)
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  elif [[ -d "/usr/local/bin" ]]; then
-    # For Intel Macs (x86 architecture)
-    echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
-    eval "$(/usr/local/bin/brew shellenv)"
-  fi
-
-  echo "Homebrew installed and added to PATH."
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   echo "Homebrew is already installed."
 fi
 
-# Install Git if not installed
-if ! command -v git &> /dev/null; then
-  echo "Git is not installed. Installing Git..."
+# Install Git
+if ! command -v git &>/dev/null; then
+  echo "Installing Git..."
   brew install git
-else
-  echo "Git is already installed."
 fi
 
 # Create ~/src directory if it doesn't exist
@@ -90,19 +76,16 @@ else
 fi
 
 # Install Zsh plugins
-if ! brew list | grep -q "^zsh-autosuggestions$"; then
-  echo "Installing zsh-autosuggestions..."
-  brew install zsh-autosuggestions
-else
-  echo "zsh-autosuggestions is already installed."
-fi
+ZSH_PLUGINS=("zsh-autosuggestions" "zsh-syntax-highlighting")
+for plugin in "${ZSH_PLUGINS[@]}"; do
+  if ! brew list | grep -q "^$plugin$"; then
+    echo "Installing $plugin..."
+    brew install "$plugin"
+  else
+    echo "$plugin is already installed."
+  fi
+done
 
-if ! brew list | grep -q "^zsh-syntax-highlighting$"; then
-  echo "Installing zsh-syntax-highlighting..."
-  brew install zsh-syntax-highlighting
-else
-  echo "zsh-syntax-highlighting is already installed."
-fi
 
 # Install lsd
 if ! command -v lsd &> /dev/null; then
@@ -127,10 +110,6 @@ if [ ! -L ~/.zshrc ]; then
 else
   echo ".zshrc is already set up."
 fi
-
-# Reload Zsh configuration
-echo "Reloading .zshrc..."
-source ~/.zshrc
 
 echo "Setup complete! Restart your terminal or source your .zshrc for changes to take effect."
 open -a iTerm
