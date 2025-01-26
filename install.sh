@@ -68,11 +68,6 @@ else
   echo "iTerm2 is already installed."
 fi
 
-# Set iTerm2 as the default terminal
-echo "Setting iTerm2 as the default terminal..."
-defaults write com.apple.terminal "Default Window Settings" -string "$ITERM_PROFILE_NAME"
-defaults write com.apple.terminal "Startup Window Settings" -string "$ITERM_PROFILE_NAME"
-
 # Install Nerd Font
 if [ ! -f ~/Library/Fonts/"HackNerdFont-Regular.ttf" ]; then
   echo "Installing Nerd Font..."
