@@ -103,5 +103,18 @@ else
   echo ".zshrc is already set up."
 fi
 
+# Set MacOS Defaults
+## Turn off mouse pointer acceleration
+defaults write NSGlobalDomain com.apple.mouse.linear -bool true
+## Set default mouse sensitivity
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 0.875
+
+## Keystroke repeat rates
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 20
+
+## Permit mac menu bar to always be visible
+defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -bool true
+
 echo "Setup complete! Restart your terminal or source your .zshrc for changes to take effect."
 open -a iTerm
